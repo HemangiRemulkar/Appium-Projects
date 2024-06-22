@@ -1,0 +1,21 @@
+public void validations()
+    {
+        WebElement toastElement = null;
+        try 
+        {
+           toastElement = driver.findElement(By.xpath("//android.widget.Toast"));
+            if (toastElement != null) {
+                System.out.println("Toast message: " + toastElement.getText());
+            } 
+            else 
+            {
+                System.out.println("Toast message not found.");
+            }
+        } 
+        catch (Exception e) 
+        {
+            // If toast message is not found, handle the exception here
+            System.out.println("Validation missing");
+
+        }     
+    }
