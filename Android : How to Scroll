@@ -1,0 +1,17 @@
+public static void useScroll() {
+        TouchAction touchAction = new TouchAction(driver);		
+        int start_x = 500;
+        int start_y = 800;
+        int end_x = 500;
+        int end_y = 200;
+        Duration duration = Duration.ofMillis(800);
+        touchAction.press(PointOption.point(start_x, start_y))
+                   .waitAction(WaitOptions.waitOptions(duration))
+                   .moveTo(PointOption.point(end_x, end_y))
+                   .release()
+                   .perform();
+        System.out.println("Scrolled");
+
+        // Add implicit wait before interacting with elements
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
