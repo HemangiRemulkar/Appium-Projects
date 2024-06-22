@@ -1,0 +1,11 @@
+ public void capture_image() throws InterruptedException
+    {
+    	int x = 357; // Replace with your desired x-coordinate
+        int y = 1353; // Replace with your desired y-coordinate
+        // Perform touch action to click on the camera button
+        TouchAction touchAction = new TouchAction(driver);
+        touchAction.tap(PointOption.point(x, y)).perform();
+        Thread.sleep(2000);
+        driver.findElement(done).click();
+        Thread.sleep(2000);
+    }
